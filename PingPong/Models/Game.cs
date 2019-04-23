@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
+// using System.Collections.Generic;
 
 namespace PingPong
 {
   public class Game
   {
-    public List<int> numList = new List<int> {};
-    // public List<int> NumList = numList;
 
     public int ConvertStringToNum(string stringUserInput)
     {
@@ -26,13 +24,36 @@ namespace PingPong
       }
     }
 
-    public List<int> MakeList(int intUserInput)
+    public string IsPingPong(int intUserInput)
     {
-      for(int i = intUserInput; i > 0; i --)
+      string output;
+
+      if (intUserInput % 7 == 0)
       {
-        numList.Add(intUserInput);
+        output = "AYYYYYYY divisible of 7!";
+        return output;
       }
-      return numList;
+
+      else if (intUserInput % 5 == 0 && intUserInput % 3 == 0)
+      {
+        output = "Ping-Pong";
+        return output;
+      }
+      else if (intUserInput % 5 == 0)
+      {
+        output = "Pong";
+        return output;
+      }
+      else if (intUserInput % 3 == 0)
+      {
+        output = "Ping";
+        return output;
+      }
+      else
+      {
+        output = intUserInput.ToString();
+        return output;
+      }
     }
   }
 }

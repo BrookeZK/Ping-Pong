@@ -29,11 +29,31 @@ namespace PingPong.Tests
     }
 
     [TestMethod]
-    public void
-    MakeList_CreateAListOfNum0ToUserInput_List()
+    public void IsPingPong_ReplaceDivisibleOf3WithPing_Ping()
     {
       Game testGame = new Game();
-      Assert.AreEqual({2,1}, testGame.MakeList(2));
+      Assert.AreEqual("Ping", testGame.IsPingPong(9));
+    }
+
+    [TestMethod]
+    public void IsPingPong_ReplaceDivisibleOf5WithPong_Pong()
+    {
+      Game testGame = new Game();
+      Assert.AreEqual("Pong", testGame.IsPingPong(10));
+    }
+
+    [TestMethod]
+    public void IsPingPong_ReplaceDivisibleOf3and5WithPingPong_PingPong()
+    {
+      Game testGame = new Game();
+      Assert.AreEqual("Ping-Pong", testGame.IsPingPong(15));
+    }
+
+    [TestMethod]
+    public void IsPingPong_ReplaceDivisibleOf7WithSentence_AYYY()
+    {
+      Game testGame = new Game();
+      Assert.AreEqual("AYYYYYYY divisible of 7!", testGame.IsPingPong(14));
     }
   }
 }
